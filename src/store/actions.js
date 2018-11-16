@@ -21,5 +21,5 @@ export default {
   },
   logout: ({ commit }) => {
     throw new Error('logout action should be implemented')
-  },
+  }
 }
