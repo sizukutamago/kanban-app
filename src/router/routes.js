@@ -12,7 +12,7 @@ export default [
   },
   {
     path: '/login',
-    component: KbnLoginView,
+    component: KbnLoginView
   },
   {
     path: '/task/:id',

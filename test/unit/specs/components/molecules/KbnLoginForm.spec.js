@@ -1,4 +1,4 @@
-import {mount} from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import KbnLoginForm from '@/components/molecules/KbnLoginForm.vue'
 
 describe('KbnLoginForm', () => {
@@ -164,13 +164,11 @@ describe('KbnLoginForm', () => {
         it('resolveされること', done => {
           onloginStub.resolves()
 
-          //クリックイベント
           loginForm.find('button').trigger('click')
           expect(onloginStub.called).to.equal(false)
           expect(loginForm.vm.error).to.equal('')
           expect(loginForm.vm.disableLoginAction).to.equal(true)
 
-          //状態の反映
           loginForm.vm.$nextTick(() => {
             expect(onloginStub.called).to.equal(true)
             const authInfo = onloginStub.args[0][0]
